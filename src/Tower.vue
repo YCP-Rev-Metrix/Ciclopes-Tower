@@ -14,17 +14,11 @@ import TheWelcome from './components/TheWelcome.vue'
 
   <main>
     <TheWelcome />
-
-    
   </main>
   -->
-  <main>
-  <div style="display:flex;justify-content:center;align-items:center;">
-    <div style="width:800px;height:500px;background-color:sandybrown;">
-      <img alt="Vue logo" class="logo" src="./assets/Bowling-Lane.svg" width="800px" height="500px"/>
-    </div>
+  <div style="position:fixed; inset:0; height: fit-content; width: fit-content; margin: auto;">
+    <img alt="Bowling Lane" class="logo" src="./assets/BOWLING-LANE-3.jpeg">
   </div>
-  </main>
 </template>
 
 <style scoped>
