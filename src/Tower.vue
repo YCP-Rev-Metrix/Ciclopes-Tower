@@ -17,10 +17,13 @@ import TheWelcome from './components/TheWelcome.vue'
   </main>
   -->
   <div style="position:fixed; inset:0; height: fit-content; width: fit-content; margin: auto;">
-    <img alt="Bowling Lane" class="logo" src="./assets/BOWLING-LANE-3.jpeg">
+      <img id ="lane" alt="Bowling Lane" class="logo" src="./assets/BOWLING-LANE-3.jpeg">
   </div>
 </template>
 
 <style scoped>
-
+img {
+  height: 100%;
+  width: auto;
+}
 </style>
