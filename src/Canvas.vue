@@ -24,7 +24,6 @@ div {
 
 
 <script>
-
 </script>
 
 <template>
