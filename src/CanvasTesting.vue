@@ -11,6 +11,11 @@ export default defineComponent({
     };
   }
 });
+
+
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+
 </script>
 
 <style>
@@ -19,13 +24,19 @@ html, body {
   margin: 0;
   background: sandybrown;
 }
+
+div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
 </style>
 
 
 <template>
-  <!--
-  <p>window width: {{ windowWidth}}</p>
-  <p>window height: {{windowHeight}}</p>
-  -->
-  <canvas v-bind:width="windowWidth" v-bind:height="windowHeight" style="background-color:#fff; overflow: hidden"></canvas>
+  <div>
+  <canvas v-bind:width="windowWidth" v-bind:height="windowHeight" id="myCanvas" style="background-color:#fff;"></canvas>
+  </div>
 </template>
