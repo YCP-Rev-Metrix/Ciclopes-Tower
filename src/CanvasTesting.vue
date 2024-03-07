@@ -1,20 +1,33 @@
 <script>
 import { defineComponent } from 'vue';
 import { useWindowSize } from '@vueuse/core';
+import   Vue  from 'vue';
+//import { ref } from 'vue';
 
-export default defineComponent({
-  setup() {
-    const { width, height } = useWindowSize()
-    return {
-      windowWidth: width,
-      windowHeight: height,
-    };
-  }
-});
+//import {createApp} from 'vue';
+
+ export default defineComponent({
+   setup() {
+     const { width, height } = useWindowSize()
+     return {
+       windowWidth: width,
+       windowHeight: height,
+     };
+   }
+ });
 
 
-const canvas = document.getElementById('myCanvas');
-const ctx = canvas.getContext('2d');
+
+function draw() {
+  const canvas = document.getElementById('myCanvas');
+  const ctx = canvas.getContext('2d');
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.lineTo(500,500);
+  ctx.stroke();
+}
+
+window.addEventListener("load", draw);
 
 </script>
 
@@ -36,7 +49,10 @@ div {
 
 
 <template>
-  <div>
-  <canvas v-bind:width="windowWidth" v-bind:height="windowHeight" id="myCanvas" style="background-color:#fff;"></canvas>
-  </div>
+  <!--<div> Height: {{height}} </div>-->
+  <canvas v-bind:width="windowWidth" v-bind:height="windowHeight" id="myCanvas" style="background-color:#000;"></canvas>
+  <!--<div> Width: {{width}}</div>-->
+
+  <!--<button @click="restrictResize">Click here to resize browser screen</button>-->
+
 </template>

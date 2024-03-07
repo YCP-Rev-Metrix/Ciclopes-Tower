@@ -1,6 +1,20 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+
+
+const canvas = document.getElementById('myCanvas');
+//const ctx = canvas.getContext('2d');
+function draw() {
+  ctx.strokeStyle = "red";
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.lineTo(100, 100);
+  ctx.lineTo(200, 100);
+  ctx.stroke();
+}
+
+//window.addEventListener("load", draw);
 </script>
 
 <style>
