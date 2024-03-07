@@ -80,12 +80,25 @@ watchEffect(() => {
   ctx.moveTo(width.value*0.575, height.value*0.05);
   ctx.arc(width.value*0.575, height.value*0.05, 5, 0, Math.PI*2, true);
 
-
-
-  ctx.moveTo(width.value*0.5, height.value);
-  ctx.bezierCurve
-
+  ctx.closePath();
   ctx.stroke();
+
+  ctx.fillStyle = "red";
+  //create initial triangle
+  ctx.moveTo(width.value*0.5, height.value*0.7);
+  ctx.lineTo(width.value*0.505, height.value*0.710);
+  ctx.lineTo(width.value*0.495, height.value*0.710);
+  //cut section out of triangle to make it an arrow
+  //IMPORTANT: must go counter-clockwise to make parts of shape dissapear
+  //see:https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
+
+  ctx.moveTo(width.value*0.5, height.value*0.707);
+  ctx.lineTo(width.value*0.498, height.value*0.710);
+  ctx.lineTo(width.value*0.502, height.value*0.710);
+  //calling ctx.fill() fills inside of pin circles
+  //if want to avoid this draw arrows before drawing pin
+  ctx.fill();
+
 })
 </script>
 
